@@ -1,0 +1,15 @@
+name: eslint
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: cloneRepository
+        uses: actions/checkout@v2
+      - name: install
+        run: make install
+      - name: eslint tests
+        run: make lint
