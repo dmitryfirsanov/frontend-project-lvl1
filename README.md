@@ -8,9 +8,10 @@ A set of quiz games. The console is used for interaction.
 
 ## Installation
 To install the game, you will need to execute 3 commands in the console:
- *Command 1: `git clone git@github.com:dmitryfirsanov/frontend-project-lvl1.git`
- *Command 2: `make install`
- *Command 3: `npm link`
+
+ * Command 1: `git clone git@github.com:dmitryfirsanov/frontend-project-lvl1.git`
+ * Command 2: `make install`
+ * Command 3: `npm link`
 
 
 ## Examples of how games work.
