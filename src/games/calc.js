@@ -25,6 +25,6 @@ const taskResponse = () => {
   return [question, answer];
 };
 
-const runCalcGame = () => logic(condition, taskResponse);
+const startGame = () => logic(condition, taskResponse);
 
-export default runCalcGame;
+export default startGame;
