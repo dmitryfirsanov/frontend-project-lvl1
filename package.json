@@ -1,8 +1,8 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/dmitryfirsanov/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/dmitryfirsanov/frontend-project-lvl1/actions)",
-  "main": "index.js",
+  "description": "5 quiz games",
+  "main": "src/logicGames.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/dmitryfirsanov/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Dmitry Firsanov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dmitryfirsanov/frontend-project-lvl1/issues"
