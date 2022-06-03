@@ -4,11 +4,11 @@ import start from '../logicGames.js';
 const description = 'What number is missing in the progression?';
 
 let number = generateRandomNumber(0, 25);
-const progressionNumber = generateRandomNumber(1, 5);
-const randomPosition = generateRandomNumber(0, 10);
+const randomPosition = generateRandomNumber(0, 9);
 const maxCountNumbers = 10;
 
 const generateRound = () => {
+  const progressionNumber = generateRandomNumber(1, 5);
   let count = 0;
   let question = '';
   let answer;
