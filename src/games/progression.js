@@ -1,16 +1,18 @@
-import logic from '../logicGames.js';
+import generateRandomNumber from '../utils.js';
+import start from '../logicGames.js';
 
-const condition = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-let number = Math.floor(Math.random() * 21);
-const progressionNumber = Math.floor(Math.random() * 5) + 1;
-const randomPosition = Math.floor(Math.random() * 10);
+let number = generateRandomNumber(0, 25);
+const progressionNumber = generateRandomNumber(1, 5);
+const randomPosition = generateRandomNumber(0, 10);
+const maxCountNumbers = 10;
 
-const taskResponse = () => {
+const generateRound = () => {
   let count = 0;
   let question = '';
   let answer;
-  while (count < 10) {
+  while (count < maxCountNumbers) {
     if (count === randomPosition) {
       question += '.. ';
       answer = String(number);
@@ -21,6 +23,6 @@ const taskResponse = () => {
   return [question, answer];
 };
 
-const startGame = () => logic(condition, taskResponse);
+const startGame = () => start(description, generateRound);
 
 export default startGame;

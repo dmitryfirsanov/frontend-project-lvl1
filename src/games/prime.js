@@ -1,7 +1,7 @@
-import randomNumber from '../randomNumber.js';
-import logic from '../logicGames.js';
+import generateRandomNumber from '../utils.js';
+import start from '../logicGames.js';
 
-const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (number) => {
   if (number <= 1) return false;
@@ -12,13 +12,13 @@ const isPrime = (number) => {
   return answer;
 };
 
-const taskResponse = () => {
-  const number = randomNumber();
+const generateRound = () => {
+  const number = generateRandomNumber(0, 100);
   const question = String(number);
   const answer = (isPrime(number)) === true ? 'yes' : 'no';
   return [question, answer];
 };
 
-const startGame = () => logic(condition, taskResponse);
+const startGame = () => start(description, generateRound);
 
 export default startGame;

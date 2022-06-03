@@ -1,17 +1,18 @@
-import randomNumber from '../randomNumber.js';
-import logic from '../logicGames.js';
+import generateRandomNumber from '../utils.js';
+import start from '../logicGames.js';
 
-const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const taskResponse = () => {
-  const number = randomNumber();
-  const even = number % 2 === 0;
+const isEven = (number) => number % 2 === 0;
 
-  const answer = even ? 'yes' : 'no';
+const generateRound = () => {
+  const number = generateRandomNumber();
+
+  const answer = isEven(number) ? 'yes' : 'no';
 
   return [number, answer];
 };
 
-const startGame = () => logic(condition, taskResponse);
+const startGame = () => start(description, generateRound);
 
 export default startGame;

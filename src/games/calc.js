@@ -1,9 +1,12 @@
-import randomNumber from '../randomNumber.js';
-import logic from '../logicGames.js';
+import generateRandomNumber from '../utils.js';
+import start from '../logicGames.js';
 
-const condition = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
-const result = (number1, number2, symbol) => {
+const getRandomOperator = () => operators[getRandomOperator(0, 2)];
+
+const calculateResultOperation = (number1, number2, symbol) => {
   switch (symbol) {
     case '+':
       return number1 + number2;
@@ -11,20 +14,20 @@ const result = (number1, number2, symbol) => {
       return number1 - number2;
     case '*':
       return number1 * number2;
-    default: return 'error';
+    default:
+      throw new Error(`Unknown order state: '${symbol}'!`);
   }
 };
 
-const taskResponse = () => {
-  const number1 = randomNumber();
-  const number2 = randomNumber();
-  const operators = ['+', '-', '*'];
-  const getRandomOperator = operators[Math.floor(Math.random() * 3)];
-  const answer = String(result(number1, number2, getRandomOperator));
-  const question = `${number1} ${getRandomOperator} ${number2}`;
+const generateRound = () => {
+  const number1 = generateRandomNumber();
+  const number2 = generateRandomNumber();
+  const operator = getRandomOperator();
+  const answer = String(calculateResultOperation(number1, number2, getRandomOperator));
+  const question = `${number1} ${operator} ${number2}`;
   return [question, answer];
 };
 
-const startGame = () => logic(condition, taskResponse);
+const startGame = () => start(description, generateRound);
 
 export default startGame;
