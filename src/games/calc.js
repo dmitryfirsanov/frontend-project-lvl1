@@ -4,9 +4,9 @@ import start from '../logicGames.js';
 const description = 'What is the result of the expression?';
 const operators = ['+', '-', '*'];
 
-const getRandomOperator = () => operators[generateRandomNumber(0, 2)];
+const getRandomOperator = () => operators[generateRandomNumber(0, operators.length - 1)];
 
-const calculateResultOperation = (number1, number2, operator) => {
+const calculate = (number1, number2, operator) => {
   switch (operator) {
     case '+':
       return number1 + number2;
@@ -23,7 +23,7 @@ const generateRound = () => {
   const number1 = generateRandomNumber(0, 30);
   const number2 = generateRandomNumber(0, 30);
   const operator = getRandomOperator();
-  const answer = String(calculateResultOperation(number1, number2, operator));
+  const answer = String(calculate(number1, number2, operator));
   const question = `${number1} ${operator} ${number2}`;
   return [question, answer];
 };
